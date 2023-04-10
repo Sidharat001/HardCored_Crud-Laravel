@@ -20,3 +20,6 @@ use App\Http\Controllers\DigiUsersController;
 // });
 
 Route::get('/', [DigiUsersController::class, 'getData']);
+Route::get('/empty-table', [DigiUsersController::class, 'emptyTable']);
+Route::get('/deleted/{id}', [DigiUsersController::class, 'deleteData'])->name('deleteUserData');
+Route::get('/view/{id}', [DigiUsersController::class, 'getUserDatabyId'])->name('viewUserData');

@@ -18,43 +18,14 @@
           </header>
           <div class="row">
             <div class="col-lg-12 mx-auto">
-              <h1 class="text-bg-dark">Crud Table <span>
-                  <button type="button" class="float-end mx-2 my-1 btn btn-danger" data-bs-toggle="modal" data-bs-target="#AddModal" title="Delete All">Delete All</button>
-                  <button type="button" class="float-end mx-2 my-1 btn btn-success" data-bs-toggle="modal" data-bs-target="#AddModal" title="Add User">Add Users</button>
-                </span>
+              <h1 class="text-bg-dark">Crud Table 
+                <x-comman-blade.opeartion-button />
               </h1>
               <div class="card border-0 shadow">
                 <div class="card-body p-5">
                   <!-- Responsive table -->
-                  <div class="table-responsive">
-                    <table class="table m-0" id="example" class="display" style="width:100%">
-                      <thead>
-                        <tr>
-                          <th scope="col">#</th>
-                          <th scope="col">Name</th>
-                          <th scope="col">UserName</th>
-                          <th scope="col">Email</th>
-                          <th scope="col">Phone</th>
-                          <th scope="col">Status</th>
-                          {{-- <th scope="col">Handle</th> --}}
-                          <th scope="col">Action</th>
-                        </tr>
-                      </thead>
-                      <tbody id="GetData_ROw">
-                        @foreach ($data as $usersData)
-                        <tr>
-                            <th scope="row">{{$usersData->user_id}}</th>
-                            <td>{{$usersData->name}}</td>
-                            <td>{{$usersData->username}}</td>
-                            <td>{{$usersData->email}}</td>
-                            <td>{{$usersData->phone}}</td>
-                            <td>{{$usersData->status}}</td>
-                            <td><ul class="list-inline m-0"><li class="list-inline-item"><button class="btn btn-primary btn-sm rounded-0" type="button" data-bs-toggle="modal" data-bs-target="#viewModal" title="View"><i class="fa fa-table"></i></button></li><li class="list-inline-item"><button class="btn btn-success btn-sm rounded-0" type="button" data-bs-toggle="modal" data-bs-target="#editModal" title="Edit"><i class="fa fa-edit"></i></button></li><li class="list-inline-item"><button id="delete" value="3" class="btn btn-danger btn-sm rounded-0" type="button" data-bs-toggle="modal" data-bs-target="#deleteModal" title="Delete"><i class="fa fa-trash"></i></button></li></ul></td>
-                        </tr>
-                        @endforeach
-                      </tbody>
-                    </table>
-                  </div>
+                  {{-- <?= print_r($data);?> --}}
+                  <x-comman-blade.user-table-data :getAllDetails='$data' />
                 </div>
               </div>
             </div>
@@ -63,24 +34,8 @@
       </section>
 
       <!--Static Crud Table Start-->
-      {{-- <section class="view _modal">
-        <div class="modal fade" id="viewModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body"> ... </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="edit_modal">
+      <x-users-details.view-single-details />
+      {{-- <section class="edit_modal">
         <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
