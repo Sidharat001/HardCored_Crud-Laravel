@@ -24,7 +24,6 @@
               <div class="card border-0 shadow">
                 <div class="card-body p-5">
                   <!-- Responsive table -->
-                  {{-- <?= print_r($data);?> --}}
                   <x-comman-blade.user-table-data :getAllDetails='$data' />
                 </div>
               </div>

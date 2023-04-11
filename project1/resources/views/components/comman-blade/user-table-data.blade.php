@@ -43,7 +43,7 @@
             <td>
               <ul class="list-inline m-0">
                 <li class="list-inline-item">
-                  <a href="" class="btn btn-primary btn-sm rounded-0"><i class="fa fa-table"></i></a></li><li class="list-inline-item">
+                  <button type="button" class="btn btn-primary btn-sm rounded-0" data-bs-toggle="modal" data-bs-target="#viewModal"><i class="fa fa-table"></i></button></li><li class="list-inline-item">
                   <a href="{{ route('viewUserData', ['id' => $usersData->user_id]) }}" class="btn btn-success btn-sm rounded-0"><i class="fa fa-edit"></i></a></li><li class="list-inline-item">
                   <a href="{{ route('deleteUserData', ['id' => $usersData->user_id]) }}" id="delete" value="3" class="btn btn-danger btn-sm rounded-0"><i class="fa fa-trash"></i></a></li>
               </ul>

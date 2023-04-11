@@ -8,12 +8,13 @@ use Illuminate\View\Component;
 
 class viewSingleDetails extends Component
 {
+    protected $singleData;
     /**
      * Create a new component instance.
      */
     public function __construct()
     {
-        //
+        // $this->singleData = $SinleUserdata;
     }
 
     /**

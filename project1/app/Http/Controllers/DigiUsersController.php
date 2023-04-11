@@ -45,6 +45,9 @@ class DigiUsersController extends Controller
     {
         $user_id = (int)$request->route('id');
         if(is_int($user_id) == true){
+            $singleUserData = DigiUsers::where('user_id', $user_id)->get();
+            return view('index', ['SinleUserdata' => $singleUserData]);
+            // print_r($singleUserData->toArray());
         }
     }
 }
